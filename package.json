@@ -20,5 +20,27 @@
   "bugs": {
     "url": "https://github.com/Euroconsumers/ec-weakpasswordindicator/issues"
   },
-  "homepage": "https://github.com/Euroconsumers/ec-weakpasswordindicator#readme"
+  "homepage": "https://github.com/Euroconsumers/ec-weakpasswordindicator#readme",
+  "devDependencies": {
+    "babel-plugin-transform-es2015-for-of": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.12",
+    "browserify": "^14.4.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.2",
+    "gulp-if": "^2.0.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sequence": "^0.4.6",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "path": "^0.12.7",
+    "sass-module-importer": "^1.4.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
 }

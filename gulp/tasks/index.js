@@ -1,0 +1,8 @@
+require('./build')
+require('./clean')
+require('./examples')
+require('./scripts')
+require('./server')
+require('./static')
+require('./styles')
+require('./watch')
