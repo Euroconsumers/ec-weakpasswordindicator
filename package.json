@@ -1,0 +1,24 @@
+{
+  "name": "ec-weakpasswordindicator",
+  "version": "0.0.2",
+  "description": "Widget to add password strenght indicator to input field.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Euroconsumers/ec-weakpasswordindicator.git"
+  },
+  "keywords": [
+    "Euroconsumers",
+    "jquery-ui",
+    "widget"
+  ],
+  "author": "Ken Van Gilbergen",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Euroconsumers/ec-weakpasswordindicator/issues"
+  },
+  "homepage": "https://github.com/Euroconsumers/ec-weakpasswordindicator#readme"
+}
