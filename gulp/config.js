@@ -31,9 +31,15 @@ module.exports = {
             dst: dstDir,
             local: localDir
         },
-        vendor: {
-            src: path.join(rootDir, 'vendor', '**', '*.js'),
-            dst: path.join(localDir, 'vendor')
+        liquid: {
+            src: path.join(srcDir, '*.liquid'),
+            dst: dstDir,
+            local: localDir
+        },
+        dependencies: {
+            src: path.join(srcDir, 'dependencies.json'),
+            dst: dstDir,
+            local: localDir
         },
         examples: {
             src: path.join(rootDir, 'examples', '**', '*.*'),

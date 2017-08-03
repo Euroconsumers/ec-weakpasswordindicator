@@ -5,4 +5,4 @@ const
 
 gulp.task('pre-build', ['clean', 'server', 'watch'])
 
-gulp.task('build', gulpSequence('pre-build', ['static', 'scripts', 'styles', 'examples']))
+gulp.task('build', gulpSequence('pre-build', ['static', 'liquid', 'scripts', 'styles', 'examples']))

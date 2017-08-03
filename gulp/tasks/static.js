@@ -11,9 +11,10 @@ gulp.task('html', () => {
         .pipe(gulpIf(ENV_DEV, gulp.dest(paths.html.local)))
 })
 
-gulp.task('vendor', () => {
-    return gulp.src(paths.vendor.src)
-        .pipe(gulp.dest(paths.vendor.dst))
+gulp.task('dependencies', () => {
+    return gulp.src(paths.dependencies.src)
+        .pipe(gulp.dest(paths.dependencies.dst))
+        .pipe(gulpIf(ENV_DEV, gulp.dest(paths.dependencies.local)))
 })
 
-module.exports = gulp.task('static', ENV_DEV ? ['html', 'vendor'] : ['html'])
+module.exports = gulp.task('static', ['html', 'dependencies'])
