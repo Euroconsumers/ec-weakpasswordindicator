@@ -5,8 +5,9 @@ const
     browserSync     = require('browser-sync').create(),
     buffer          = require('vinyl-buffer'),
     gulp            = require('gulp'),
-    gulpif          = require('gulp-if'),
+    gulpIf          = require('gulp-if'),
     gutil           = require('gulp-util'),
+    gulpRename      = require('gulp-rename'),
     path            = require('path'),
     source          = require('vinyl-source-stream'),
     sourcemaps      = require('gulp-sourcemaps'),
@@ -22,7 +23,7 @@ gulp.task('libs-scripts', () => {
     .pipe(babel())
     .pipe(uglify())
     .pipe(gulp.dest(paths.libs.dst))
-    .pipe(gulpif(ENV_DEV, gulp.dest(paths.libs.local)))
+    .pipe(gulpIf(ENV_DEV, gulp.dest(paths.libs.local)))
 })
 
 
@@ -37,12 +38,15 @@ gulp.task('source-scripts', () => {
     .bundle()
     .pipe(source(`${pkgname}.js`))
     .pipe(buffer())
-    .pipe(gulpif(ENV_DEV, sourcemaps.init({ loadMaps: true})))
+    .pipe(gulpIf(ENV_DEV, sourcemaps.init({ loadMaps: true})))
     .pipe(uglify().on('error', gutil.log))
-    .pipe(gulpif(ENV_DEV, sourcemaps.write('.')))
+    .pipe(gulpIf(!ENV_DEV, gulpRename((path) => {
+          path.extname = `.min` + path.extname;
+        })))
+    .pipe(gulpIf(ENV_DEV, sourcemaps.write('.')))
     .pipe(gulp.dest(paths.js.dst))
-    .pipe(gulpif(ENV_DEV, gulp.dest(paths.js.local)))
-    .pipe(gulpif(ENV_DEV, browserSync.reload({ stream: true })))
+    .pipe(gulpIf(ENV_DEV, gulp.dest(paths.js.local)))
+    .pipe(gulpIf(ENV_DEV, browserSync.reload({ stream: true })))
 })
 
 module.exports = gulp.task('scripts', ['libs-scripts', 'source-scripts'])

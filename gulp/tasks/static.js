@@ -1,6 +1,6 @@
 const
     gulp        = require('gulp'),
-    gulpif      = require('gulp-if'),
+    gulpIf      = require('gulp-if'),
 
     { paths }   = require('../config'),
     { ENV_DEV } = require('../envs')
@@ -8,7 +8,7 @@ const
 gulp.task('html', () => {
     return gulp.src(paths.html.src)
         .pipe(gulp.dest(paths.html.dst))
-        .pipe(gulpif(ENV_DEV, gulp.dest(paths.html.local)))
+        .pipe(gulpIf(ENV_DEV, gulp.dest(paths.html.local)))
 })
 
 gulp.task('vendor', () => {
