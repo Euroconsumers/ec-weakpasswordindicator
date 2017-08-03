@@ -6,6 +6,10 @@ Widget to indicate password strength of an input field
 
 See [https://design.euroconsumers.org/Common/widgets/#weakPasswordIndicator](https://design.euroconsumers.org/Common/widgets/#weakPasswordIndicator)
 
+## Getting Started
+
+Run `npm install`.
+
 ## Environments
 
 Run `npm start` to develop mode.

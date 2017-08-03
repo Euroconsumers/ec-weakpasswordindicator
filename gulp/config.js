@@ -9,13 +9,13 @@ const
 
 // Structure ready to scale it to bigger files structure, i.e. styles/ js/ directories.
 module.exports = {
-    pkgname: 'ec-passwordvalidator',
+    pkgname: 'ec-weakpasswordindicator',
     paths: {
         srcDir,
         dstDir,
         localDir,
         js: {
-            entry: path.join(srcDir, 'ec-passwordvalidator.js'),
+            entry: path.join(srcDir, 'ec-weakpasswordindicator.js'),
             src: path.join(srcDir, '*.js'),
             dst: dstDir,
             local: localDir

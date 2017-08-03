@@ -9,7 +9,7 @@ module.exports = gulp.task('server', () => {
     browserSync.init(path.join(paths.localDir, '**', '*.*'), {
         server: {
             baseDir: paths.localDir,
-            index: 'ec-passwordvalidator.html',
+            index: 'ec-weakpasswordindicator.html',
             serveStaticOptions: {
                 extensions: ['html']
             },
