@@ -2,7 +2,7 @@
 (function($) {
     'use strict';
 
-    $.widget('ec.passwordvalidator', {
+    $.widget('ec.weakpasswordindicator', {
         options: {
             showGuesses: false, //Displays number of guesses needed to guess the password
             showSuggestions: false, //Displays suggestions about password typed
@@ -23,7 +23,7 @@
             if(this.options.showMeter) { 
                 this.meter = $(`
                     <meter 
-                        class="passwordvalidator__meter"
+                        class="weakpasswordindicator__meter"
                         min="0"
                         max="4" 
                         value="0"
@@ -36,7 +36,7 @@
             if(this.options.showStrength) {
                 this.strength = $(`
                     <div
-                        class="passwordvalidator__strength"
+                        class="weakpasswordindicator__strength"
                     ></div>
                 `)
                 .insertAfter(this.element)
@@ -46,7 +46,7 @@
             if(this.options.showSuggestions) {
                 this.suggestions = $(`
                     <div
-                        class="passwordvalidator__suggestions"
+                        class="weakpasswordindicator__suggestions"
                     ></div>
                 `)
                 .insertAfter(this.element)
@@ -56,7 +56,7 @@
             if(this.options.showScore) {
                 this.score = $(`
                     <div
-                        class="passwordvalidator__score"
+                        class="weakpasswordindicator__score"
                     ></div>
                 `)
                 .insertAfter(this.element)
@@ -66,7 +66,7 @@
             if(this.options.showGuesses) {
                 this.guesses = $(`
                     <div
-                        class="passwordvalidator__guesses"
+                        class="weakpasswordindicator__guesses"
                     ></div>
                 `)
                 .insertAfter(this.element)
