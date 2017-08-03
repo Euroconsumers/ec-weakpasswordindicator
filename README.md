@@ -1,4 +1,5 @@
 # ec-weakpasswordindicator
+
 Widget to indicate password strength of an input field
 
 ## Usage
@@ -12,4 +13,3 @@ Run `npm start` to develop mode.
 Run `npm run build` if you want to build with minified version and no browserSync server starting.
 
 Run `npm run build:teamcity` is used by the Euroconsumers ci build server.
-
