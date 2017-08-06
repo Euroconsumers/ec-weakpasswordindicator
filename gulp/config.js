@@ -47,6 +47,10 @@ module.exports = {
             src: path.join(rootDir, 'examples', '**', '*.*'),
             dst: path.join(localDir, 'examples')
         },
+        test: {
+            src: path.join(srcDir, '**', '*.spec.js'),
+            output: path.join(rootDir, '_test'),
+        },
         libs: {
             src: path.join(rootDir, 'libs', '**', '*.js'),
             dst: path.join(dstDir, 'libs'),
