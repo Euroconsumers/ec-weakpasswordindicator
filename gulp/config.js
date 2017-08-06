@@ -1,4 +1,6 @@
-const path = require('path')
+const path = require('path'),
+
+    package = require('../package.json')
 
 // Main project directory
 const 
@@ -9,13 +11,13 @@ const
 
 // Structure ready to scale it to bigger files structure, i.e. styles/ js/ directories.
 module.exports = {
-    pkgname: 'ec-weakpasswordindicator',
+    pkgname: package.name,
     paths: {
         srcDir,
         dstDir,
         localDir,
         js: {
-            entry: path.join(srcDir, 'ec-weakpasswordindicator.js'),
+            entry: path.join(srcDir, `${package.name}.js`),
             src: path.join(srcDir, '*.js'),
             dst: dstDir,
             local: localDir

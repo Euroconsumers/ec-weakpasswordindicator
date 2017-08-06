@@ -3,10 +3,10 @@
     gulpIf          = require('gulp-if'),
     gutil           = require('gulp-util'),
     gulpRename      = require('gulp-rename'),
-    gulpLiquify         = require('gulp-liquify'),
+    gulpLiquify     = require('gulp-liquify'),
 
     { paths }       = require('../config'),
-    { ENV_DEV } = require('../envs')
+    { ENV_DEV }     = require('../envs')
 
 module.exports = gulp.task('liquid', () => {
     return gulp.src(paths.liquid.src)

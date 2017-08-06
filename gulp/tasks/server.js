@@ -3,13 +3,14 @@ const
     gulp            = require('gulp'),
     path            = require('path'),
 
-    { paths }       = require('../config')
+    { paths }       = require('../config'),
+    { name }        = require('../../package.json')
 
 module.exports = gulp.task('server', () => {
     browserSync.init(path.join(paths.localDir, '**', '*.*'), {
         server: {
             baseDir: paths.localDir,
-            index: 'ec-weakpasswordindicator.html',
+            index: `${name}.html`,
             serveStaticOptions: {
                 extensions: ['html']
             },

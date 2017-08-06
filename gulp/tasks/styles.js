@@ -9,7 +9,7 @@
     sourcemaps      = require('gulp-sourcemaps'),
 
     { paths }       = require('../config'),
-    { ENV_DEV } = require('../envs')
+    { ENV_DEV }     = require('../envs')
 
 module.exports = gulp.task('styles', () => {
     return gulp.src(paths.styles.entry)
