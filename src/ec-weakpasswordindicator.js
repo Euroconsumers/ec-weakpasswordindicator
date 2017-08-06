@@ -20,16 +20,26 @@
         },
         _create: function() {
             //Meter show element
-            if(this.options.showMeter) { 
-                this.meter = $(`
-                    <meter 
-                        class="weakpasswordindicator__meter"
-                        min="0"
-                        max="4" 
-                        value="0"
-                    ></meter>
-                `)
-                .insertAfter(this.element)
+            if(this.options.showMeter) {
+
+                this.meter = $('<div class="loading-bar__bar" role="progressbar" style="width: 0%;"></div>')
+
+                    $('<div class="weakpasswordindicator__meter loading-bar"></div>')
+                    .append($('<div class="loading-bar__bg"></div>').append(this.meter))
+                    .css('width', this.element.css('width'))
+                    .insertAfter(this.element)
+
+            
+                // Remove after accepting above
+                // this.meter = $(`
+                //     <meter 
+                //         class="weakpasswordindicator__meter"
+                //         min="0"
+                //         max="4" 
+                //         value="0"
+                //     ></meter>
+                // `)
+                // .insertAfter(this.element)
             }
 
             //Strength element
@@ -109,7 +119,8 @@
 
             // Show meter
             if(this.options.showMeter) {
-                this.meter.attr('value', result.score)
+                // this.meter.attr('value', result.score)
+                this.meter.css('width', `${result.score ? 100 * result.score / 4 : 0}%`)
             }
         }
     })
