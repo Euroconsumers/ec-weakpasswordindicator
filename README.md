@@ -17,3 +17,5 @@ Run `npm start` to develop mode.
 Run `npm run build` if you want to build with minified version and no browserSync server starting.
 
 Run `npm run build:teamcity` is used by the Euroconsumers ci build server.
+
+Run `npm run test` is used to run bare tests, if you want to se pretty output run `npm run test-local`.

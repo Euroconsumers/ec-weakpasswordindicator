@@ -6,7 +6,8 @@
   "scripts": {
     "start": "gulp build --dev",
     "build": "gulp build",
-    "test": "mocha src/*.spec.js"
+    "test": "gulp test",
+    "test-local": "gulp test --dev"
   },
   "repository": {
     "type": "git",
