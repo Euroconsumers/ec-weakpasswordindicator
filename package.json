@@ -6,7 +6,7 @@
   "scripts": {
     "start": "gulp build --dev",
     "build": "gulp build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha src/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "babelify": "^7.3.0",
     "browser-sync": "^2.18.12",
     "browserify": "^14.4.0",
+    "chai": "^4.1.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-babel": "^6.1.2",
@@ -44,6 +45,7 @@
     "gulp-util": "^3.0.8",
     "path": "^0.12.7",
     "sass-module-importer": "^1.4.0",
+    "selenium-webdriver": "^3.5.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   }
