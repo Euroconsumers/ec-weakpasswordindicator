@@ -22,11 +22,11 @@ module.exports = gulp.task('styles', () => {
         outputStyle:     'compressed'
     }))
     .pipe(autoprefixer({
-        browsers: ['last 45 versions'],
+        flexbox: false,
+		browsers: ['last 2 versions', 'ie 11', 'android >= 4.1'], // allow jelly bean
         cascade: false
     }))
     .pipe(gulpIf(ENV_DEV, sourcemaps.write('./')))
     .pipe(gulp.dest(paths.styles.dst))
-    .pipe(gulpIf(ENV_DEV, gulp.dest(paths.styles.local)))
     .pipe(gulpIf(ENV_DEV, browserSync.reload({ stream: true })));
 });

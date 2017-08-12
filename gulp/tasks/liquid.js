@@ -14,5 +14,5 @@ module.exports = gulp.task('liquid', () => {
         .pipe(gulpIf(ENV_DEV, gulpRename((path) => {
             path.extname = `.html`;
             })))
-        .pipe(gulpIf(ENV_DEV, gulp.dest(paths.liquid.local)))
+        .pipe(gulpIf(ENV_DEV, gulp.dest(paths.liquid.dst)))
 });

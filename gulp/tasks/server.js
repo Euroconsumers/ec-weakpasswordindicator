@@ -7,9 +7,9 @@ const
     { name }        = require('../../package.json')
 
 module.exports = gulp.task('server', () => {
-    browserSync.init(path.join(paths.localDir, '**', '*.*'), {
+    browserSync.init(path.join(paths.dstDir, '**', '*.*'), {
         server: {
-            baseDir: paths.localDir,
+            baseDir: paths.dstDir,
             index: `${name}.html`,
             serveStaticOptions: {
                 extensions: ['html']

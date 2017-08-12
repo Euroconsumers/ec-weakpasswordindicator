@@ -23,7 +23,6 @@ gulp.task('libs-scripts', () => {
     .pipe(babel())
     .pipe(uglify())
     .pipe(gulp.dest(paths.libs.dst))
-    .pipe(gulpIf(ENV_DEV, gulp.dest(paths.libs.local)))
 })
 
 
@@ -45,7 +44,6 @@ gulp.task('source-scripts', () => {
         })))
     .pipe(gulpIf(ENV_DEV, sourcemaps.write('.')))
     .pipe(gulp.dest(paths.js.dst))
-    .pipe(gulpIf(ENV_DEV, gulp.dest(paths.js.local)))
     .pipe(gulpIf(ENV_DEV, browserSync.reload({ stream: true })))
 })
 

@@ -5,6 +5,6 @@ const
         { paths } = require('../config')
 
 module.exports = gulp.task('clean', () => {
-    return gulp.src([paths.dstDir, paths.localDir], { read: false })
+    return gulp.src([paths.dstDir], { read: false })
         .pipe(clean({ force: true }))
 })
