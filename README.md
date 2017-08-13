@@ -10,12 +10,12 @@ See [https://design.euroconsumers.org/Common/widgets/#weakPasswordIndicator](htt
 
 Run `npm install`.
 
-## Environments
+## Scripts
 
-Run `npm start` to develop mode.
+Run `npm start` to enter development mode with browserSync server started.
 
-Run `npm run build` if you want to build with minified version and no browserSync server starting.
+Run `npm run build` if you want to build the minified version for distribution.
 
-Run `npm run build:teamcity` is used by the Euroconsumers ci build server.
+Run `npm run test` is used to run bare tests, if you want to see pretty output run `npm run test-local`.
 
-Run `npm run test` is used to run bare tests, if you want to se pretty output run `npm run test-local`.
+The `release.bat` is used to commit the build into our internal cdn repository.
