@@ -3,7 +3,7 @@ cls
 
 set widgetname=ec-weakpasswordindicator
 for /f "tokens=2*" %%i in ('node -p "require('./package.json').version"') do set widgetversion=%%i 
-set cdnpath=http://svn.belux.conseur.org/svn/repository/projects/internet/Euroconsumers.Cdn.Patterns/trunk/
+set cdnpath=http://svn.belux.conseur.org/svn/repository/projects/internet/Euroconsumers.Cdn.Patterns/PRO/
 
 @echo.
 @echo _______________________________________________________________________
