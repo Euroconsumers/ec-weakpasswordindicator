@@ -1,4 +1,7 @@
 {
+  "css": {
+    "ec-loadingbar": "https://cdn.euroconsumers.org/vendor/euroconsumers/ec-loadingbar/0.0.1/ec-loadingbar.min.css"
+    },
   "js": {
     "zxcvbn": "https://cdn.euroconsumers.org/vendor/zxcvbn/4.4.2/dist/zxcvbn.js"
     }
