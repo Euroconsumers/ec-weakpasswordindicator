@@ -24,7 +24,7 @@
 
                 this.meter = $('<div class="loading-bar__bar" role="progressbar" style="width: 0%;"></div>')
 
-                    $('<div class="weakpasswordindicator__meter loading-bar"></div>')
+                    $('<div class="weakpasswordindicator__meter loading-bar loading-bar--small"></div>')
                     .append($('<div class="loading-bar__bg"></div>').append(this.meter))
                     .css('width', this.element.css('width'))
                     .insertAfter(this.element)
