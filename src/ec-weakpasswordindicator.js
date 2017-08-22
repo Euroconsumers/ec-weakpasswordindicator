@@ -16,30 +16,25 @@
                 2: "Weak",
                 3: "Good",
                 4: "Strong"
-            } //Map of strength values to display to user
+            }, //Map of strength values to display to user
+            colorsMap: {
+                0: '#E51900',
+                1: '#F55B00',
+                2: '#E7A700',
+                3: '#FFE300',
+                4: '#46A32B'
+            }
         },
         _create: function() {
             //Meter show element
             if(this.options.showMeter) {
 
-                this.meter = $('<div class="loading-bar__bar" role="progressbar" style="width: 0%;"></div>')
+                this.meter = $('<div class="weakpasswordindicator__meter__bar" role="progressbar" style="width: 0%;"></div>')
 
-                    $('<div class="weakpasswordindicator__meter loading-bar loading-bar--small"></div>')
-                    .append($('<div class="loading-bar__bg"></div>').append(this.meter))
+                    $('<div class="weakpasswordindicator__meter"></div>')
+                    .append($('<div class="weakpasswordindicator__meter__bg"></div>').append(this.meter))
                     .css('width', this.element.css('width'))
                     .insertAfter(this.element)
-
-            
-                // Remove after accepting above
-                // this.meter = $(`
-                //     <meter 
-                //         class="weakpasswordindicator__meter"
-                //         min="0"
-                //         max="4" 
-                //         value="0"
-                //     ></meter>
-                // `)
-                // .insertAfter(this.element)
             }
 
             //Strength element
@@ -120,7 +115,10 @@
             // Show meter
             if(this.options.showMeter) {
                 // this.meter.attr('value', result.score)
-                this.meter.css('width', `${result.score ? 100 * result.score / 4 : 0}%`)
+                this.meter.css({
+                    'width': `${result.score ? 100 * result.score / 4 : 0}%`,
+                    'background-color': this.options.colorsMap[result.score || 0]
+                })
             }
         }
     })
