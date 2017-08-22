@@ -30,7 +30,6 @@
             if(this.options.showMeter) {
 
                 this.meter = $('<div class="weakpasswordindicator__meter__bar" role="progressbar" style="width: 0%;"></div>')
-
                     $('<div class="weakpasswordindicator__meter"></div>')
                     .append($('<div class="weakpasswordindicator__meter__bg"></div>').append(this.meter))
                     .css('width', this.element.css('width'))
