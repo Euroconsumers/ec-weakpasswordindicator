@@ -14,6 +14,13 @@ const config = {
     port: '8080'
 }
 
+
+const SELECTOR = {
+    ALL_INDICATORS: 'input[data-plugin="weakpasswordindicator"]',
+    DEFAULT_INDICATOR: 'input[data-plugin="weakpasswordindicator"]',
+    INDICATOR_METER: 'div.weakpasswordindicator__meter',
+}
+
 test.describe('Testing widget', function() {
     this.timeout(timeOut);
     
@@ -24,43 +31,34 @@ test.describe('Testing widget', function() {
         
         chaiWebdriver(driver);
         driver.get(`http://${config.host}:${config.port}/index.html`);
+        // driver.get('http://localhost:8080/index.html')
     });
-    
-    
+        
     test.after(function() {
         driver.quit();
     });
-    
-    test.it('Widgets should be defined', function() {
-        
-        let elements = driver.findElement(By.css('input[data-plugin="weakpasswordindicator"]'))
-        assert(elements, 'widgets should be defined');
-        
-    });
 
     test.it('Should be 7 widgets on a page', function() {
-
-        let elements = driver.findElements(By.css('input[data-plugin="weakpasswordindicator"]'))
+        driver.findElements(By.css(SELECTOR.ALL_INDICATORS))
             .then(elements => {
                 assert(elements.length === 7, '7 widgets should be found, but was ' + elements.length);
             })
-
     })
     
     
     test.it('Default widget should display meter bar', function() {
         // TODO, this test is to change. We won't check ids values
 
-        driver.findElements(By.css('input[data-plugin="weakpasswordindicator"]'))
-            .then(elements => {
-                elements[0].getAttribute('id').then(id => {
-                    assert(id === 'pv0', 'default widget should has' + id)
+        driver.findElement(By.css(SELECTOR.DEFAULT_INDICATOR))
+            .then(element => {
+                element.findElement(By.css(SELECTOR.INDICATOR_METER)).then(meter => {
+                    assert(typeof meter !== 'undefined', 'Meter should not be undefined');
                 })
             })
         
     });
     
-    test.it('Default widget meter should change on input', function() {
+    test.it('Default widget meter should change color on input', function() {
         
     })
     

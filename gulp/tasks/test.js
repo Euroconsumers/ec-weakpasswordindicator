@@ -1,8 +1,10 @@
 const
     gulp            = require('gulp'),
+    liveServer      = require('gulp-live-server'),
     mocha           = require('gulp-mocha'),
+    sequence        = require('gulp-sequence'),
 
-    { paths }        = require('../config'),
+    { paths }       = require('../config'),
     package         = require('../../package.json'),
     { ENV_DEV }     = require('../envs')
 
@@ -15,7 +17,7 @@ const mochaLocalConfig = {
             autoOpen: true
         }
 }
-    
+
 module.exports = gulp.task('test', () => {
     return gulp.src(paths.test.src)
         .pipe(mocha(ENV_DEV && mochaLocalConfig))
@@ -25,6 +27,4 @@ module.exports = gulp.task('test', () => {
 		.once('end', () => {
 			process.exit();
 		})
-
 });
-
