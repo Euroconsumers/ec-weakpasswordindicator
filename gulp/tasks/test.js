@@ -1,6 +1,6 @@
 const
     gulp            = require('gulp'),
-    liveServer      = require('gulp-live-server'),
+    //liveServer      = require('gulp-live-server'),
     mocha           = require('gulp-mocha'),
     sequence        = require('gulp-sequence'),
 
