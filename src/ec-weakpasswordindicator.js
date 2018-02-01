@@ -38,41 +38,25 @@
 
             //Strength element
             if(this.options.showStrength) {
-                this.strength = $(`
-                    <div
-                        class="weakpasswordindicator__strength"
-                    ></div>
-                `)
+                this.strength = $('<div class="weakpasswordindicator__strength"></div>')
                 .insertAfter(this.element)
             }
 
             //Show suggestions element
             if(this.options.showSuggestions) {
-                this.suggestions = $(`
-                    <div
-                        class="weakpasswordindicator__suggestions"
-                    ></div>
-                `)
+                this.suggestions = $('<div class="weakpasswordindicator__suggestions"></div>')
                 .insertAfter(this.element)
             }
 
             // Show score element
             if(this.options.showScore) {
-                this.score = $(`
-                    <div
-                        class="weakpasswordindicator__score"
-                    ></div>
-                `)
+                this.score = $('<div class="weakpasswordindicator__score"></div>')
                 .insertAfter(this.element)
             }
 
             //Guesses element
             if(this.options.showGuesses) {
-                this.guesses = $(`
-                    <div
-                        class="weakpasswordindicator__guesses"
-                    ></div>
-                `)
+                this.guesses = $('<div class="weakpasswordindicator__guesses"></div>')
                 .insertAfter(this.element)
             }
 
@@ -85,15 +69,14 @@
         },
 
         inputHandler: function(e) {
-            let val = e.target.value
-            let result = zxcvbn(val)
+            val = e.target.value
+            result = zxcvbn(val)
             
             // console.log(result)
 
             // Show suggestions
             if(this.options.showSuggestions) {
-                this.suggestions.text(result.feedback.suggestions
-                    .reduce((prev, value) =>  prev + ' ' + value, ''))
+                this.suggestions.text(result.feedback.suggestions.reduce(function(prev, value) { return prev + ' ' + value }, ''))
             }
 
             // Show guesses number
@@ -115,7 +98,7 @@
             if(this.options.showMeter) {
                 // this.meter.attr('value', result.score)
                 this.meter.css({
-                    'width': `${result.score ? 100 * result.score / 4 : 0}%`,
+                    'width': (result.score ? 100 * result.score / 4 : 0) + "%",
                     'background-color': this.options.colorsMap[result.score || 0]
                 })
             }
